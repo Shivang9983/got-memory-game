@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Thrones - Memory Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+</head>
+<body>
+    <div class="app-background"></div>
 
+    <div class="game-container">
+        <header class="game-header glass-panel">
+            <h1 class="game-title">Westeros Memory</h1>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-label">Time</span>
+                    <span id="timer" class="stat-value">00:00</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Moves</span>
+                    <span id="moves" class="stat-value">0</span>
+                </div>
+                <button id="restart-btn" class="btn-primary">Restart</button>
+            </div>
+        </header>
+
+        <section class="memory-game" id="game-board">
+            <!-- 12 Cards -->
+            <div class="memory-card" data-house="Stark">
+                <div class="card-inner">
+                    <img src="img/front-1.png" alt="Stark" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <div class="memory-card" data-house="Baratheon">
+                <div class="card-inner">
+                    <img src="img/front-2.png" alt="Baratheon" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <div class="memory-card" data-house="Tyrell">
+                <div class="card-inner">
+                    <img src="img/front-3.png" alt="Tyrell" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <div class="memory-card" data-house="Lanninster">
+                <div class="card-inner">
+                    <img src="img/front-4.png" alt="Lannister" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <div class="memory-card" data-house="Martell">
+                <div class="card-inner">
+                    <img src="img/front-5.png" alt="Martell" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <div class="memory-card" data-house="Targaryen">
+                <div class="card-inner">
+                    <img src="img/front-6.png" alt="Targaryen" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <!-- Duplicates -->
+            <div class="memory-card" data-house="Stark">
+                <div class="card-inner">
+                    <img src="img/front-1.png" alt="Stark" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <div class="memory-card" data-house="Baratheon">
+                <div class="card-inner">
+                    <img src="img/front-2.png" alt="Baratheon" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <div class="memory-card" data-house="Tyrell">
+                <div class="card-inner">
+                    <img src="img/front-3.png" alt="Tyrell" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <div class="memory-card" data-house="Lanninster">
+                <div class="card-inner">
+                    <img src="img/front-4.png" alt="Lannister" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <div class="memory-card" data-house="Martell">
+                <div class="card-inner">
+                    <img src="img/front-5.png" alt="Martell" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+            <div class="memory-card" data-house="Targaryen">
+                <div class="card-inner">
+                    <img src="img/front-6.png" alt="Targaryen" class="front-face">
+                    <img src="img/back.jpg" alt="House Crest" class="back-face">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Victory Modal -->
+    <div id="victory-modal" class="modal-overlay hidden">
+        <div class="modal-content glass-panel">
+            <h2 class="victory-title">Victory!</h2>
+            <p class="victory-message">You have conquered the houses of Westeros.</p>
+            <div class="final-stats">
+                <p>Time: <span id="final-time">00:00</span></p>
+                <p>Moves: <span id="final-moves">0</span></p>
+            </div>
+            <button id="play-again-btn" class="btn-primary">Play Again</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
